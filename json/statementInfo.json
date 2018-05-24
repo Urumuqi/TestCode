@@ -1,0 +1,115 @@
+{
+    "errMsg": "",
+    "flag": 1,
+    "data": {
+        "statement_id": "QD1801310002",
+        "company_code": "深圳街电科技有限公司",
+        "partner_name": "嘉庆渠道商3",
+        "sign_type": "",
+        "agent_id": "28c55b96-ae89-40d1-8e80-5a608ec3b2bf",
+        "user_name": "渠道经理-嘉庆",
+        "balance_time": "2018-03-01 00:00:00--2018-04-01 00:00:00",
+        "status": "wait_qd_approve",
+        "create_time": "2018-01-31 16:33:21",
+        "finish_time": "0000-00-00 00:00:00",
+        "currency_code": "人民币(CNY)",
+        "amount_total": "1233.00",
+        "partner_approve_img": "",
+        "partner_approve_invoice_img": "",
+        "bank_name": "建行",
+        "bank_account": "嘉庆32",
+        "bank_number": "6225889655896554745",
+        "bank_address": "",
+        "register_address": "",
+        "tracking_number": "",
+        "tracking_company": "",
+        "account_register_province": null,
+        "account_register_city": null,
+        "partner_district_name": "嘉庆渠道商3"
+    },
+    "operation": [{
+        "id": "365",
+        "target": "QD1801310002",
+        "target_type": "qd_statement",
+        "node_name": "bd_approved",
+        "node_info": "",
+        "operator_username": "管理员",
+        "operator_time": "2018-01-31 16:34:00",
+        "is_print": "1",
+        "node_name_chinese": "BD审核通过",
+        "department": "BD"
+    }],
+    "title": {
+        "data": {
+            "statement_id": "对账单号",
+            "company_code": "公司主体",
+            "partner_name": "渠道商公司主体",
+            "partner_district_name": "渠道商名称",
+            "agent_id": "渠道商ID",
+            "sign_type": "渠道商模式",
+            "user_name": "BD",
+            "status": "状态",
+            "balance_time": "对账周期",
+            "create_time": "创建时间",
+            "finish_time": "结算完成时间",
+            "currency_code": "对账币种",
+            "amount_total": "结算总额",
+            "partner_approve_img": "电子对账单扫描件",
+            "partner_approve_invoice_img": "电子发票扫描件",
+            "tracking_number": "快递单号",
+            "tracking_company": "快递公司",
+            "bank_name": "开户银行",
+            "bank_account": "银行账户",
+            "bank_number": "银行账号",
+            "bank_address": "银行地址",
+            "register_address": "注册地址",
+            "account_register_province": "收款银行所在省",
+            "account_register_city": "收款银行所在市"
+        },
+        "operation": {
+            "department": "部门",
+            "node_name_chinese": "操作内容",
+            "node_info": "备注",
+            "operator_username": "审核人",
+            "operator_time": "审核时间"
+        },
+        "summary": {
+            "header": [
+                "结款项对应订单／项目",
+                "订单／项目数量",
+                "结算款项",
+                "结算总额",
+                "操作"
+            ],
+            "order_cps": {
+                "count": "订单分成数量",
+                "order_cps_amount": "订单分成金额",
+                "operation": "联查明细"
+            },
+            "sign_expense": {
+                "count": "签约费数量",
+                "sign_amount": "签约费金额",
+                "operation": "联查明细"
+            },
+            "cost_adjustment": {
+                "count": "费用调整项数量",
+                "cost_adjustment_amount": "费用调整项金额",
+                "operation": "联查明细"
+            }
+        }
+    },
+    "summary": {
+        "order_cps": {
+            "count": "0",
+            "order_cps_amount": "0.00"
+        },
+        "sign_expense": {
+            "count": "0",
+            "sign_amount": "0.00"
+        },
+        "cost_adjustment": {
+            "count": "1",
+            "cost_adjustment_amount": "1233.00"
+        }
+    }
+}

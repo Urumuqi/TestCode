@@ -1,0 +1,91 @@
+"event": "update",
+"order": {
+    "uuid": "250002058506",
+    "user_id": "e2f1bc24-4f7c-4e43-863d-250e1d85c16b",
+    "status": 1,
+    "payment_status": 2,
+    "step": "finished",
+    "start_time": 1521488000,
+    "update_time": 1521791911,
+    "price_amount": 400,
+    "deposit_amount": 0,
+    "usage_days": 3,
+    "tax_amount": 0,
+    "price_pay": 400,
+    "price_rule": "{"
+    uuid ":"
+    10 ","
+    name ":"
+    PricingRule_Hourly ","
+    content ":" {\
+        "free_usage_second\":86400,\"hour_price\":0,\"daily_cap\":200,\"price_cap\":9900,\"zhima_enabled\":true,\"business_id\":\"5464e881-7bb0-41f9-8ae9-1a78fa575910\"}",
+        "status": 1,
+        "comment": "\u6309\u5c0f\u65f6\u6536\u8d39,24\u5c0f\u65f6\u5c01\u9876\u4ef7",
+        "currency": "CNY",
+        "create_time": 1,
+        "update_time": 1,
+        "display_desc": "\u6309\u5c0f\u65f6\u6536\u8d39,24\u5c0f\u65f6\u5c01\u9876\u4ef7"
+    }
+    ",
+    "comment": null,
+    "error_code": "",
+    "error_message": null,
+    "order_type": "battery",
+    "order_number": 250002058506,
+    "zhima_order_no": "",
+    "return_time": 0,
+    "return_user_id": "",
+    "discount_rule": "{"
+    CouponRule ":{"
+    coupon_price ":100,"
+    coupon_count ":0,"
+    Status ":1},"
+    PCTRule ":{"
+    discount_pct ":0,"
+    Status ":0}}",
+    "discount_info": "{"
+    CouponInfo ":{"
+    CouponRules ":null,"
+    Discount ":0},"
+    PCTInfo ":{"
+    PctRule ":{"
+    discount_pct ":0},"
+    Discount ":0}}",
+    "price_discounted": 0,
+    "platform": "Ios",
+    "which": "",
+    "uid": 2410266,
+    "return_uid": 2410266,
+    "pay_time": 1521791911,
+    "price_pay_revised": 400,
+    "create_time": 1521791458,
+    "order_id": "250002058506",
+    "product_id": "f0545645-0b68-4c2e-b4fd-914625f8cdee",
+    "product_name": "battery",
+    "product_amount": 1,
+    "product_price": 0,
+    "product_info": "{"
+    borrow_device_id ":"
+    5 d52a165 - 47 ba - 4 bc3 - aeae - 15 a45c08f635 ","
+    borrow_transaction_id ":"
+    9 b99417c - 7531 - 4 ca1 - 8414 - be10e72778a4 ","
+    borrow_slot_seq ":5,"
+    borrow_business_id ":"
+    5464e881 - 7 bb0 - 41 f9 - 8 ae9 - 1 a78fa575910 ","
+    battery_id ":"
+    f0545645 - 0b 68 - 4 c2e - b4fd - 914625 f8cdee ","
+    provider ":"
+    ","
+    return_transaction_id ":"
+    ","
+    return_device_id ":"
+    5 d52a165 - 47 ba - 4 bc3 - aeae - 15 a45c08f635 ","
+    return_slot_seq ":2,"
+    return_business_id ":"
+    5464e881 - 7 bb0 - 41 f9 - 8 ae9 - 1 a78fa575910 "}",
+    "borrow_device_id": "5d52a165-47ba-4bc3-aeae-15a45c08f635",
+    "borrow_business_id": "5464e881-7bb0-41f9-8ae9-1a78fa575910",
+    "return_device_id": "5d52a165-47ba-4bc3-aeae-15a45c08f635",
+    "return_business_id": "5464e881-7bb0-41f9-8ae9-1a78fa575910"
+}
+}
