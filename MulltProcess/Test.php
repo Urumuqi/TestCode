@@ -26,6 +26,3 @@ class Test
 }
 
 Test::process();
-
-// bank number : 592904829010101
-// bank name : 	招商银行股份有限公司厦门鹭江支行
