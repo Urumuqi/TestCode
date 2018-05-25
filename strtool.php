@@ -18,7 +18,21 @@
 // visit_type_id = 2 鉴权拜访|3 不鉴权拜访 机柜类型的拜访
 // template_id = 51 | 92
 // 数字截断
-$num = 120.245;
-$num2 = sprintf('%d', $num * 100) / 100;
-echo 'num2 = ' . $num2 . PHP_EOL;
+// $num = 120.245;
+// $num2 = sprintf('%d', $num * 100) / 100;
+// echo 'num2 = ' . $num2 . PHP_EOL;
+
+// $t = '2018-05-01 00:00:00--2018-06-01 00:00:00';
+// $t1 = explode('--', $t);
+// if (strtotime($t1[0]) >= strtotime('20180501')) {
+//     echo 'new' . PHP_EOL;
+// } else {
+//     echo 'old' . PHP_EOL;
+// }
+// print_r($t1);
+// $str = 'C043PA1190';
+// $str_l = strtolower($str);
+// echo ' lower case str = ' . $str_l . PHP_EOL;
+
+
 
