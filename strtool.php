@@ -39,17 +39,37 @@
 // $str_l = strtolower($str);
 // echo ' lower case str = ' . $str_l . PHP_EOL;
 
-$arr = array(
-    'A',
-    'a',
-    'B',
-    'c043pa1190'
-);
-$res = array_map(
-    function ($item) {
-        return strtoupper($item);
-    },
-    $arr
-);
-print_r($res);
+// $t = 0.29;
+// $t1 = sprintf('%d', $t * 100) / 100;
+// var_dump($t1);
+// var_export($t);
 
+// $arr = array(
+//     'A',
+//     'a',
+//     'B',
+//     'c043pa1190'
+// );
+// $res = array_map(
+//     function ($item) {
+//         return strtoupper($item);
+//     },
+//     $arr
+// );
+// print_r($res);
+// php bcmath 函数测试
+bcscale(20);
+$a = 23.223459;
+$b = 0.292348578;
+var_export($a);
+echo PHP_EOL;
+var_export($b);
+$add = bcadd($a, $b);
+var_dump($add);
+$isLarger = bccomp($a, $a);
+var_dump($isLarger);
+$r1 = bcdiv($a, $b);
+var_dump($r1);
+var_dump(bcmod(100, 3));
+var_dump(bcmul($a, $b));
+var_dump(bcpow(100, 2));
