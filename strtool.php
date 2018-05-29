@@ -34,5 +34,17 @@
 // $str_l = strtolower($str);
 // echo ' lower case str = ' . $str_l . PHP_EOL;
 
-
+$arr = array(
+    'A',
+    'a',
+    'B',
+    'c043pa1190'
+);
+$res = array_map(
+    function ($item) {
+        return strtoupper($item);
+    },
+    $arr
+);
+print_r($res);
 
