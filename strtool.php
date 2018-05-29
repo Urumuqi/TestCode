@@ -1,4 +1,9 @@
 <?php
+/**
+ * 数组，字符串测试工具.
+ *
+ * @author wq <yuri1308960477@gmail.com>
+ */
 
 // $date = date('Y-m-d H:i:s');
 // $newDate = date('Y-m-d H:i:s', strtotime('-3 month', strtotime($date)));
