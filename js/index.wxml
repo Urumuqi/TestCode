@@ -1,0 +1,5 @@
+<view>
+    <view wx:for="{{img}}" class="item-{{index}}">
+        <image style="display: {{index < count ? 'block' : 'none'}}" src="{{item}}"></image>
+    </view>
+</view>

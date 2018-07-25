@@ -74,8 +74,64 @@
 // var_dump(bcmul($a, $b));
 // var_dump(bcpow(100, 2));
 
-$reg = '!^([^\:]+)\:([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)$!';
-$toMatch = 'controller.Index.index';
-$matches = array();
-preg_match($reg, $toMatch, $matches);
-var_dump($matches);
+// $reg = '!^([^\:]+)\:([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)$!';
+// $toMatch = 'controller.Index.index';
+// $matches = array();
+// preg_match($reg, $toMatch, $matches);
+// var_dump($matches);
+// $params = array(
+//     'username' => 'shaz',
+//     'token' => '113qwfr43r34t354t',
+//     'key' => '中文'
+// );
+// $queryStr = http_build_query($params);
+// var_dump($queryStr);
+// $sql = "SELECT payment_channel, SUM(amount) AS `amount`
+// FROM `mysql_jiedian`.`payment_order`
+// WHERE status IN (1, 5, 6)
+// 	AND success_time < 1527782400
+// 	AND order_type = 'deposit'
+// GROUP BY payment_channel";
+// $p = array(
+//     'db' => 'mysql_jiedian',
+//     'sql' => $sql,
+//     'username' => 'jd_finance',
+//     'token' => 'bb9fe6a0-9e3d-423f-85d0-6b4be2b9a394',
+//     'format' => 'json'
+// );
+// echo http_build_query($p) . PHP_EOL;
+// $date = '20180601';
+// $newDate = date('Ym01', strtotime('+1 month', strtotime($date)));
+// echo $newDate . PHP_EOL;
+// $month = '201804';
+// echo date('Ymd', strtotime($month)) . PHP_EOL;
+// echo 'date = ' . date('Y-m-d H:i:s', 1538841599) . PHP_EOL;
+// $startTime = 1538841599;
+// $monthEndTime = strtotime('2018-10-31 23:59:59');
+// $endTime = 1541519999;
+// $thisMonthDays = ($monthEndTime - $startTime) / 86400;
+// echo 'this month : ' . $thisMonthDays . PHP_EOL;
+// $nextMonthDays = ($endTime - $monthEndTime) / 86400;
+// echo 'next month : ' . $nextMonthDays . PHP_EOL;
+// $days = ($endTime - $startTime) / 86400;
+// echo $days . PHP_EOL;
+// 什么情况会出现一个月卡跨3个月使用， 月卡在下个月得剩余天数大于下月天数
+// function getMonthDayCount($date)
+// {
+//     // 月末 - 月初
+//     $monthEnd = date('Ymd', strtotime('+1 month -1 second', strtotime(date('Ym01', strtotime($date)))));
+//     $monthStart = date('Ym01', strtotime($date));
+//     return $monthEnd - $monthStart + 1;
+// }
+// $daysLeft = 30;
+// $nextMonthDays = getMonthDays('20180720');
+// echo $nextMonthDays . PHP_EOL;
+$startTime = strtotime('2018-01-01 00:00:00');
+$dateEndTime = strtotime('2018-01-01 23:59:59');
+$step = '+3 hours';
+while ($startTime < $dateEndTime) {
+    $endTime = strtotime($step, $startTime);
+    echo date('Y-m-d H:i:s', $startTime) . '_' . date('Y-m-d H:i:s', $endTime) . PHP_EOL;
+    $startTime = $endTime;
+}
+
