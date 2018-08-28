@@ -126,12 +126,13 @@
 // $daysLeft = 30;
 // $nextMonthDays = getMonthDays('20180720');
 // echo $nextMonthDays . PHP_EOL;
-$startTime = strtotime('2018-01-01 00:00:00');
-$dateEndTime = strtotime('2018-01-01 23:59:59');
-$step = '+3 hours';
-while ($startTime < $dateEndTime) {
-    $endTime = strtotime($step, $startTime);
-    echo date('Y-m-d H:i:s', $startTime) . '_' . date('Y-m-d H:i:s', $endTime) . PHP_EOL;
-    $startTime = $endTime;
-}
-
+// $startTime = strtotime('2018-01-01 00:00:00');
+// $dateEndTime = strtotime('2018-01-01 23:59:59');
+// $step = '+3 hours';
+// while ($startTime < $dateEndTime) {
+//     $endTime = strtotime($step, $startTime);
+//     echo date('Y-m-d H:i:s', $startTime) . '_' . date('Y-m-d H:i:s', $endTime) . PHP_EOL;
+//     $startTime = $endTime;
+// }
+echo strtotime('2018-09-01') .  PHP_EOL;
+echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;

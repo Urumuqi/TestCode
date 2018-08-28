@@ -3,29 +3,21 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
     <body>
-        <div id="app1">
-            <ol>
-                <todo-item 
-                v-for="item in groceryList" 
-                v-bind:todo="item" 
-                v-bind:key="item.id">
-                </todo-item>
-            </ol>
+        <div id="example">
+            <p>Original message : "{{ msg }}"</p>
+            <p>Computed reversed message : "{{ reversedMsg }}"</p>
         </div>
     </body>
     <script>
-        Vue.component('todo-item', {
-            props: ['todo'],
-            template: '<li>{{ todo.text }}</li>'
-        })
-        var app1 = new Vue({
-            el: '#app1',
+        var vm = Vue({
+            el: "#example",
             data: {
-                groceryList: [
-                    { id: 0, text: '蔬菜' },
-                    { id: 1, text: '奶酪' },
-                    { id: 2, text: '随便其他人吃什么' }
-                ]
+                msg: 'hello'
+            },
+            computed: {
+                reversedMsg: function () {
+                    return this.msg.split('').reverse().join('')
+                }
             }
         })
     </script>

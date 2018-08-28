@@ -1,0 +1,44 @@
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    detail: {
+      name: '带你嗨系列之麻辣鲜香美蛙鱼头火锅+桌游',
+      desc: '对宅说no，这周日下午和我们一起吃鱼头火锅，玩桌游，加特色下午茶；美蛙鱼头餐厅－印象鱼头，色泽诱人，含189元巴沙鱼一条；下午疯狂桌游，一起来烧脑，有不限量的冰饮料哦～',
+      detail: '对宅说no，这周日下午和我们一起吃鱼头火锅，玩桌游，加特色下午茶；美蛙鱼头餐厅－印象鱼头，色泽诱人，含189元巴沙鱼一条；下午疯狂桌游，一起来烧脑，有不限量的冰饮料哦～活动详情，将会以富文本暂时出来',
+      originPrice: 250,
+      salePrice: 99,
+      startTime: '2018/08/05 11:30',
+      endTime: '2018/08/05 17:30',
+      minLimit: 20,
+      maxLimit: 30,
+      single: '限单身',
+      minAge: 20,
+      maxAge: 30,
+      joinedCount: 10
+    },
+    partners: [
+      {
+        icon: './../../../images/mua.png',
+        name: '木马圈'
+      },
+      {
+        icon: './../../../images/mua.png',
+        name: '木马圈'
+      },
+      {
+        icon: './../../../images/mua.png',
+        name: '木马圈'
+      },
+      {
+        icon: './../../../images/mua.png',
+        name: '木马圈'
+      }
+    ],
+    sponsor: {
+      name: '木马圈',
+      publishDate: '2018/10/01',
+      phone: '18380447995',
+      icon: './../../../images/mua.png'
+    }
