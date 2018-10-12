@@ -16,7 +16,8 @@
       single: '限单身',
       minAge: 20,
       maxAge: 30,
-      joinedCount: 10
+      joinedCount: 10,
+      publishDate: '2018/10/01'
     },
     partners: [
       {
@@ -38,7 +39,7 @@
     ],
     sponsor: {
       name: '木马圈',
-      publishDate: '2018/10/01',
+      //publishDate: '2018/10/01',
       phone: '18380447995',
       icon: './../../../images/mua.png'
     }

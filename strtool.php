@@ -134,5 +134,66 @@
 //     echo date('Y-m-d H:i:s', $startTime) . '_' . date('Y-m-d H:i:s', $endTime) . PHP_EOL;
 //     $startTime = $endTime;
 // }
-echo strtotime('2018-09-01') .  PHP_EOL;
-echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
+// echo strtotime('2018-09-01') .  PHP_EOL;
+// echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
+
+// $images = [
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner4.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner3.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner2.png'
+// ];
+// $json = json_encode($images);
+// echo $json . PHP_EOL;
+
+// $ss = array(
+//     0, 2, 3, 10, 100
+// );
+// $t = max($ss);
+// var_dump($t);$images = [
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner4.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner3.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner2.png'
+// ];
+// $json = json_encode($images);
+// echo $json . PHP_EOL;
+// $uid = 1000016;
+// $o = $uid % 512;
+// echo $o . PHP_EOL;
+
+// $t = array(
+//     'code1' => 'name1',
+//     'code2' => 'name2',
+//     'code3' => 'name3'
+// );
+// $r = array_map(function ($k, $v) {
+//     return array(
+//         'code' => $k,
+//         'name' => $v,
+//     );
+// }, $t);
+// var_dump($r);
+
+// 应收明细订单明细
+// 售卖充电宝
+
+// $str = '2018091323233200070000000001';
+// echo strlen($str) . PHP_EOL;
+// $tarray = array(
+//     'period' => 10,
+//     'frequency' => 5,
+//     'block' => true,
+// );
+// $tstr = json_encode($tarray);
+
+// $tr = (array) json_decode($tstr, true);
+// var_dump($tr);
+
+// $p = array(
+//     'username' => 'admin1@ankerbox.com',
+//     'password' => 'Test123456',
+// );
+// echo json_encode($p) . PHP_EOL;
+
+$t = localeconv();
+var_dump($t);
+
