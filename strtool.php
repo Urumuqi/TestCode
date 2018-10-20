@@ -194,6 +194,8 @@
 // );
 // echo json_encode($p) . PHP_EOL;
 
-$t = localeconv();
-var_dump($t);
+// $t = localeconv();
+// var_dump($t);
 
+$t = '2018/10/10';
+echo date('Y-m-d', strtotime($t)) . PHP_EOL;
