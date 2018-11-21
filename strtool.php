@@ -196,6 +196,16 @@
 
 // $t = localeconv();
 // var_dump($t);
+// $t = array(
+//     'key_1' => 'value_1',
+// );
+// $rs = array(
+//     'key_2' => 'value_2'
+// );
+// $rs = array_merge($rs, $t);
+// var_dump($rs);
 
-$t = '2018/10/10';
-echo date('Y-m-d', strtotime($t)) . PHP_EOL;
+// $str = 'abwef0';
+// $str = substr($str, -4);
+// $str = ltrim($str, '0');
+// var_dump($str);

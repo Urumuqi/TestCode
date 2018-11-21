@@ -1,136 +1,160 @@
 <?php
+/**
+ * 数据库配置.
+ *
+ * @author yaojian <jiany3@jumei.com>
+ */
 
 namespace Config;
-if(!defined('JM_PHP_CONN_POOL_ON'))
-    define('JM_PHP_CONN_POOL_ON', true);
 
-if(!defined('JM_PHP_MYSQL_LOCAL_POOL_ON'))
-    define('JM_PHP_MYSQL_LOCAL_POOL_ON', false);
+/**
+ * Class Db.
+ */
+class Db extends \Db\ConfigSchema
+{
 
-if(!defined('JM_PHP_MYSQL_POOL_PROXY_ON'))
-    define('JM_PHP_MYSQL_POOL_PROXY_ON', true);
-
-class Db extends \Db\ConfigSchema {
-
-    /**
-     * 得到sql语句的log,如果线上不需要请直接把这句话删掉!
-     */
-    public $DEBUG = true;
-
-    /**
-     * DEBUG的等级，2要打印堆栈，1只打印sql语句
-     */
+    public $DEBUG = false;
     public $DEBUG_LEVEL = 1;
 
-    /** 是否使用长链接 */
+    //是否使用长连接
     protected $persistent = true;
 
-    /** 连接池 */
+    // #{Res.php-connectionpool.Proxy.XXXXDsn} 如果不使用本地连接池, 则使用全局中间件;可以在子类中重写
     public $globalDSN = array(
-        "write" => "#{Res.php-connectionpool.JdProxy.WriteDsn}",
-        "read" => "#{Res.php-connectionpool.JdProxy.ReadDsn}",
+        'write' => "#{Res.php-connectionpool.JdProxy.WriteDsn}",
+        'read' => "#{Res.php-connectionpool.JdProxy.ReadDsn}"
     );
 
-    /**
-     * db read config.
-     *
-     * @var array
-     */
     public $read = array(
-        'jd_finance' => array(
-            'dsn' => "#{Res.Database.Jd_finance.Read.Dsn}",
-            'db' => 'jd_finance',
-            'user' => "#{finance_service.db.read.username}",
-            'password' => "#{finance_service.db.read.passwd}",
+        'user' => array(
+            'dsn' => "#{Res.Database.Oceanwing.Ycn-user.Read.Dsn}",
+            'user' => "#{payment_service.Db.user}",
+            'password' => "#{payment_service.Db.pwd}",
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+            ),
+            'dbname' => "ycn-user"
+        ),
+        'payment' => array(
+            'dsn' => "#{Res.Database.Jiedian_payment.Read.Dsn}",
+            'user' => "#{payment_service.Db.user}",
+            'password' => "#{payment_service.Db.pwd}",
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+            ),
+            'dbname' => "jiedian_payment"
+        ),
+        'data-new' => array(
+            'dsn' => "#{Res.Database.Ycn_data_new.Read.Dsn}",
+            'user' => "#{payment_service.Db.user}",
+            'password' => "#{payment_service.Db.pwd}",
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+            ),
+            'dbname' => "ycn-data-new"
+        ),
+        'ycn-ops' => array(
+            'dsn' => "#{Res.Database.Oceanwing.Ycn-ops.Read.Dsn}",
+            'db' => 'ycn-ops',
+            'user' => 'ycn_swd',
+            'password' =>  'YcN+Db2017Sz',
             'confirm_link' => true,
             'options' => array(
-                \PDO::ATTR_TIMEOUT => 3,
-                1002 => 'SET NAMES \'utf8mb4\'',
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+                \PDO::ATTR_TIMEOUT => 3600
             )
         ),
-        'jiedian_sumdb' => array(
-            'dsn' => "#{Res.Database.Jiedian_sumdb.Read.Dsn}",
-            'db' => 'jiedian_sumdb',
-            'user' => "#{finance_service.db.read.username}",
-            'password' => "#{finance_service.db.read.passwd}",
-            'confirm_link' => true,
+    );
+    public $write = array(
+        'user' => array(
+            'dsn' => "#{Res.Database.Oceanwing.Ycn-user.Write.Dsn}",
+            'user' => "#{payment_service.Db.userWrite}",
+            'password' => "#{payment_service.Db.pwdWrite}",
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+            ),
+            'dbname' => "ycn-user"
+        ),
+        'payment' => array(
+            'dsn' => "#{Res.Database.Jiedian_payment.Write.Dsn}",
+            'user' => "#{payment_service.Db.userWrite}",
+            'password' => "#{payment_service.Db.pwdWrite}",
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+            ),
+            'dbname' => "jiedian_payment"
+        ),
+        'data-new' => array(
+            'dsn' => "#{Res.Database.Ycn_data_new.Write.Dsn}",
+            'user' => "#{payment_service.Db.userWrite}",
+            'password' => "#{payment_service.Db.pwdWrite}",
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8mb4\'',
+            ),
+            'dbname' => "ycn-data-new"
+        ),
+        'key_db' => array(
+            'dsn' => "#{Res.Database.Jd.KeyDb.Write.Dsn}",
+            'db' => 'key_db',
+            'user' => "#{payment_service.Db.userWrite}",
+            'password' =>  "#{payment_service.Db.pwdWrite}",
+            'confirm_link' => true, //required to set to TRUE in daemons.
             'options' => array(
-                \PDO::ATTR_TIMEOUT => 3,
-                1002 => 'SET NAMES \'utf8mb4\'',
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8\'',
+                \PDO::ATTR_TIMEOUT => 3
             )
         ),
-        'user_sumdb' => array(
-            'dsn' => "#{Res.Database.jd.sumdb.ycn-user.Read.Dsn}",
-            'db' => 'ycn-user',
-            'user' => "#{finance_service.db.read.username}",
-            'password' => "#{finance_service.db.read.passwd}",
+        'ycn-ops' => array(
+            'dsn' => "#{Res.Database.Oceanwing.Ycn-ops.Write.Dsn}",
+            'db' => 'ycn-ops',
+            'user' => 'ycn_swd',
+            'password' =>  'YcN+Db2017Sz',
             'confirm_link' => true,
-            'options' => array(
-                \PDO::ATTR_TIMEOUT => 3,
-                1002 => 'SET NAMES \'utf8mb4\'',
-            )
-        ),
-        'cloud_sumdb' => array(
-            array(
-                'dsn' => "#{Res.Database.jd.sumdb.ycn-cloud.Read.Dsn}",
-                'db' => 'ycn-cloud',
-                'user' => "#{finance_service.db.read.username}",
-                'password' => "#{finance_service.db.read.passwd}",
-                'confirm_link' => true,
-                'options' => array(
-                    \PDO::ATTR_TIMEOUT => 3,
-                    1002 => 'SET NAMES \'utf8mb4\'',
-                )
+            'options'      => array(
+                \PDO::ATTR_TIMEOUT            => 3,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8\'',
             ),
         ),
-        'business_sumdb' => array(
-            'dsn' => "#{Res.Database.jd.sumdb.ycn-business.Read.Dsn}",
-            'db' => 'ycn-business',
-            'user' => "#{finance_service.db.read.username}",
-            'password' => "#{finance_service.db.read.passwd}",
-            'confirm_link' => true,
-            'options' => array(
-                \PDO::ATTR_TIMEOUT => 3,
-                1002 => 'SET NAMES \'utf8mb4\'',
-            )
-        ),
-        'ankerbox_finance' => array(
-            'dsn' => "#{Res.Database.Ankerbox_finance.Read.Dsn}",
-            'db' => 'ankerbox_finance',
-            'user' => "#{finance_service.db.read.username}",
-            'password' => "#{finance_service.db.read.passwd}",
-            'confirm_link' => true,
-            'options' => array(
-                \PDO::ATTR_TIMEOUT => 3,
-                1002 => 'SET NAMES \'utf8mb4\'',
-            )
-        ),
     );
 
-    /**
-     * db write config.
-     *
-     * @var array
-     */
-    public $write = array(
-        'jd_finance' => array(
-            'dsn' => "#{Res.Database.Jd_finance.Write.Dsn}",
-            'db' => 'jd_finance',
-            'user' => "#{finance_service.db.write.username}",
-            'password' => "#{finance_service.db.write.passwd}",
-            'confirm_link' => true,
-            'options' => array(
-                \PDO::ATTR_TIMEOUT => 3,
-                1002 => 'SET NAMES \'utf8mb4\'',
-            )
-        ),
-    );
+    // 双写先写老库
+    public static $writeOldFirst = true;
+
+    // 是否双写
+    public static $doubleWrite = "#{payment_service.Db.doubleWrite}";
+
+    public static $switchPayment = "#{payment_service.Db.switchPayment}";
+    // 不需要双写的表
+    public static $noDoubleWriteTables = "#{payment_service.Db.NoDoubleWriteTables}";
+
 
     public function __construct()
     {
         $this->parseDsn($this->read);
         $this->parseDsn($this->write);
-        parent::__construct();
+        foreach (array('read', 'write') as $m) {
+            foreach ($this->$m as $name => &$r) {
+                // had parsed. or is template parsed.
+                if (!isset($r['dsn'])) {
+                    continue;
+                }
+                if (!in_array($name, array('data-new'))) {
+                    $r['dsn'] = $this->globalDSN[$m];
+                }
+                // 使用中间件时,如果没有设置连接参数persistent,则建立PDO长连接, 提高性能
+                if ($this->persistent === true && !isset($r['options'][\PDO::ATTR_PERSISTENT])){
+                    $r['options'][\PDO::ATTR_PERSISTENT] = true;
+                }
+                $r = self::parseCfg($r);
+            }
+        }
+        // parent::__construct();
     }
 
     protected function parseDsn(&$instance)
@@ -151,4 +175,5 @@ class Db extends \Db\ConfigSchema {
             }
         );
     }
+
 }
