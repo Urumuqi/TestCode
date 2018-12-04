@@ -1,7 +1,4 @@
 <?php
-$t = '1';
-$tt = 2;
-echo $t += $tt . PHP_EOL;
 
 $reportParam = array(
     'from'               => 1, // const A_BORROW = 1;const A_RETURN = 2;const A_ORDER_DETAIL = 3;
@@ -29,12 +26,14 @@ $batteryBaseInfo = array(
     'transaction_status' => '',
 );
 
+echo json_encode($batteryBaseInfo) . PHP_EOL;
+
 # 订单kafka配置， 指定版本参数
-group.id = "jiedian_slot_event_crm"
-api.version.request = "false"
-broker.version.fallback = "0.8.2.1"
-enable.auto.commit = "true"
-auto.commit.interval.ms = 1000
-auto.offset.reset = "error"
-offset.store.sync.interval.ms = 1000
-offset.store.method = "broker"
+// group.id = "jiedian_slot_event_crm"
+// api.version.request = "false"
+// broker.version.fallback = "0.8.2.1"
+// enable.auto.commit = "true"
+// auto.commit.interval.ms = 1000
+// auto.offset.reset = "error"
+// offset.store.sync.interval.ms = 1000
+// offset.store.method = "broker"
