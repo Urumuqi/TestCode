@@ -15,6 +15,7 @@ $reportParam = array(
     'pic_info'           => [], //
     'time'               => time() // 用户上报时间
 );
+
 // 电池信息
 $batteryBaseInfo = array(
     'uuid' => '',
@@ -26,7 +27,7 @@ $batteryBaseInfo = array(
     'transaction_status' => '',
 );
 
-echo json_encode($batteryBaseInfo) . PHP_EOL;
+// echo json_encode($batteryBaseInfo) . PHP_EOL;
 
 # 订单kafka配置， 指定版本参数
 // group.id = "jiedian_slot_event_crm"
@@ -37,3 +38,5 @@ echo json_encode($batteryBaseInfo) . PHP_EOL;
 // auto.offset.reset = "error"
 // offset.store.sync.interval.ms = 1000
 // offset.store.method = "broker"
+
+echo urlencode('www.mydreamplus.com/mdptimes/15362449789951') . PHP_EOL;
