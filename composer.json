@@ -1,0 +1,14 @@
+{
+    "name": "wq/test-code",
+    "description": "wq's test code",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wq",
+            "email": "yuri1308960477@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

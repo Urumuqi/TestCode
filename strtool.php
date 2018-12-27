@@ -133,6 +133,48 @@
 //     $endTime = strtotime($step, $startTime);
 //     echo date('Y-m-d H:i:s', $startTime) . '_' . date('Y-m-d H:i:s', $endTime) . PHP_EOL;
 //     $startTime = $endTime;
+// // }
+// echo strtotime('2018-09-01') .  PHP_EOL;
+// echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
+
+// // 登陆密码
+// $passwd = md5('admin' . 'admin');
+// // 提现密码
+// $withdraw = md5('admin' . 'admin');
+// echo $passwd . PHP_EOL;
+
+// // 测试商户号
+// $merchantNo = 'S20170907011890';
+
+// test call_user_func
+// error_reporting(E_ALL);
+// function increment(&$n)
+// {
+//     return $n ++;
 // }
-echo strtotime('2018-09-01') .  PHP_EOL;
-echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
+
+// function incrementa($n)
+// {
+//     return $n ++;
+// }
+
+// $a = 0;
+// // call_user_func 不能用引用做参数
+// $aa = call_user_func('increment', $a);
+// echo '$a = ' . $a . ' $aa = ' . $aa . PHP_EOL;
+
+// $a = 0;
+// $aa = call_user_func('incrementa', $a);
+// echo '$a = ' . $a . ' $aa = ' . $aa . PHP_EOL;
+
+// $a = 1;
+// // call_user_func_array 可以传递引用做参数
+// call_user_func_array('increment', array(&$a));
+// echo $a . PHP_EOL;
+
+$a = 1;
+$b = 2;
+$c = 3;
+// php7 list 从左到右顺序赋值
+list( $c, $a) = array($b, $c);
+echo '$a = ' . $a . ' | $b = ' . $b . ' | $c = ' . $c . PHP_EOL;
