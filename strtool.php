@@ -172,9 +172,58 @@
 // call_user_func_array('increment', array(&$a));
 // echo $a . PHP_EOL;
 
-$a = 1;
-$b = 2;
-$c = 3;
-// php7 list 从左到右顺序赋值
-list( $c, $a) = array($b, $c);
-echo '$a = ' . $a . ' | $b = ' . $b . ' | $c = ' . $c . PHP_EOL;
+$mac = 'f0:18:98:a2:2d:de';
+$mac = str_replace(':', '', $mac);
+$mac = strtoupper($mac);
+echo $mac . PHP_EOL;
+exit;
+
+/**
+ * 启动相机。
+ */
+$start = [
+    'action_id' => '拍摄号',
+    'camera_group_id' => '相机群',
+];
+
+/**
+ * 启动相机返回接口
+ */
+$startReturn = [
+    'status' => 1, // 1成功，2繁忙，3失败（异常信息msg字段）
+    'msg'    => 'camera init success',
+    'action_id' => '拍摄号', // 拍摄号
+];
+
+/**
+ * 相机拍摄结果 camera_progress
+ */
+$cameraProgress = [
+    'action_id' => '拍摄号',
+    'camera_group_id' => '相机群',
+];
+
+/**
+ * 拍摄结果返回
+ */
+$cameraProgressRs = [
+    'status' => 1, // 1拍摄完成，2拍摄中，3失败（异常信息msg字段)
+    'msg'    => 'camera init success',
+    'action_id' => '拍摄号', // 拍摄号
+    'step' => '1', // 整数，1-10
+    'desc' => 'step 描述',
+];
+echo json_encode($cameraProgressRs, JSON_UNESCAPED_UNICODE) . PHP_EOL;
+// 1. 关闭所有USB接口
+// 2. 对焦5秒
+// 3. 按下快门
+// 4. 松开快门和对焦
+// 5. 打开所有USB接口（每4个一组，每组间隔1秒）
+// 6. 从相机读取20张照片
+// 7. 将照片用OpenGL在大屏幕上渲染出来
+// 8. FFMPEG合成视频
+// 9. 上传视频（调用PHP对应接口）
+// 10. 拍摄完成 （视频生成并上传完成）
+
+echo json_encode($camResult, JSON_UNESCAPED_UNICODE) . PHP_EOL;
+
