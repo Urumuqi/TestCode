@@ -209,3 +209,17 @@
 // $str = substr($str, -4);
 // $str = ltrim($str, '0');
 // var_dump($str);
+$t = array(
+    'id' => 1,
+    'name' => 2,
+    'happy' => 'yes'
+);
+unset($t['id'], $t['name']);
+var_dump($t);
+
+// $refundInfoStr = '{"fail_day_times":0,"fail_times":0,"error_message":"","refund_no":"10001","provider":"offline_refund","applet":"wxapp","offline_refund_info":{"expired_order":{"209362961625":{"balance":0,"deposit":5800}},"online_failed_order":[],"refund_order":[],"refund_form":{"account":"13670009350","type":"2","name":"\u6c5f\u4f73\u6d9b","device_info":{"errMsg":"getSystemInfo:ok","batteryLevel":100,"version":"6.7.3","system":"iOS 11.4","windowHeight":603,"pixelRatio":2,"screenHeight":667,"language":"zh_CN","statusBarHeight":20,"deviceOrientation":"portrait","windowWidth":375,"model":"iPhone 6","screenWidth":375,"fontSizeSetting":16,"brand":"iPhone","platform":"ios","SDKVersion":"2.3.2"},"uid":"1887609","refund_applet":"wxapp"},"refund_amount":{"balance":0,"deposit":5800}}}';
+// $productInfo = json_decode($refundInfoStr, true);
+// $offlineRefundInfo = $productInfo['offline_refund_info'];
+// var_dump($offlineRefundInfo);
+// T052DS11RW
+// T125DS12ZA
