@@ -21,7 +21,6 @@ for (province of district) {
     };
     let province_sql = connection.query('insert into district set ?', prov, function(error, results, fields) {
         if (error) throw error;
-        counter ++;
     });
     for (city of province.children) {
         // city
@@ -32,7 +31,6 @@ for (province of district) {
         };
         let city_sql = connection.query('insert into district set ?', ci, function(error, results, fields) {
             if (error) throw error;
-            counter ++;
         });
         for (dist of city.children) {
             // district
@@ -43,7 +41,6 @@ for (province of district) {
             };
             let area_sql = connection.query('insert into district set ?', area, function(error, results, fields) {
                 if (error) throw error;
-                counter ++;
             });
         }
     }
