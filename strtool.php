@@ -285,16 +285,67 @@
 // unset($a);
 // xdebug_debug_zval('a');
 
-class Foo {
+// class Foo {
 
-    public $var = '3.1415962654';
-}
-// $baseMemory = memory_get_usage();
-for ($i = 0; $i <= 1000000; $i ++) {
-    $a = new Foo();
-    $a->self = $a;
-    // if ($i % 500 === 0) {
-    //     echo sprintf('%8d : ', $i), memory_get_usage() - $baseMemory, PHP_EOL;
-    // }
-}
-echo memory_get_peak_usage() , PHP_EOL;
+//     public $var = '3.1415962654';
+// }
+// // $baseMemory = memory_get_usage();
+// for ($i = 0; $i <= 1000000; $i ++) {
+//     $a = new Foo();
+//     $a->self = $a;
+//     // if ($i % 500 === 0) {
+//     //     echo sprintf('%8d : ', $i), memory_get_usage() - $baseMemory, PHP_EOL;
+//     // }
+// }
+// echo memory_get_peak_usage() , PHP_EOL;
+// $res = [
+//     'heart' => [
+//         'score' => 95,
+//         'desc' => '心脏非常健康',
+//         'notice' => '心态很好，继续保持'
+//     ],
+//     'stomach' => [
+//         'score' => 40,
+//         'desc' => '风险极大',
+//         'notice' => '早起早睡，不熬夜，一天三顿按时吃'
+//     ],
+// ];
+// echo json_encode($res, true) . PHP_EOL;
+
+// $project_stage = [
+//     1 => '建设中',
+//     2 => '土建竣工',
+//     3 => '公共装修',
+//     4 => '商业装修',
+//     5 => '预招租',
+//     6 => '招租',
+//     7 => '正式入驻运营',
+// ];
+// echo json_encode($project_stage, JSON_UNESCAPED_UNICODE) . PHP_EOL;
+// 建设中
+// 土建施工
+// 招租
+// 已入驻
+// {"1":"建设中","2":"土建竣工","3":"公共装修","4":"商业装修","5":"预招租","6":"招租","7":"正式入驻运营"}
+$comment = [
+    'format' => [
+        'method' => 'map',
+        // 'param' => [
+        //     'format' => 'yyyy-mm-dd'
+        // ],
+    // ],
+        'content' => [
+            1 => '重要客户',
+            2 => '普通客户'
+        ],
+    ],
+    'lang' => '母公司ID',
+    'comment' => '母公司ID,0表示咩有关联母公司',
+    // 'form' => [
+    //     'edit' => 'enable',
+    //     'control' => 'select',
+    //     'data' => 'map',
+    //     'param' => []
+    // ]
+];
+echo json_encode($comment, JSON_UNESCAPED_UNICODE, 3) . PHP_EOL;
