@@ -324,28 +324,43 @@
 // echo json_encode($project_stage, JSON_UNESCAPED_UNICODE) . PHP_EOL;
 // 建设中
 // 土建施工
-// 招租
+
 // 已入驻
 // {"1":"建设中","2":"土建竣工","3":"公共装修","4":"商业装修","5":"预招租","6":"招租","7":"正式入驻运营"}
 $comment = [
-    'format' => [
-        'method' => 'map',
-        // 'param' => [
-        //     'format' => 'yyyy-mm-dd'
-        // ],
+    // 'format' => [
+    //     'method' => 'map',
+    //     // 'param' => [
+    //     //     'format' => 'yyyy-mm-dd'
+    //     // ],
+    // // ],
+    //     'content' => [
+    //         'sfo' => 'SFO',
+    //         'sfc' => 'SFC'
+    //     ],
     // ],
-        'content' => [
-            1 => '重要客户',
-            2 => '普通客户'
-        ],
-    ],
-    'lang' => '母公司ID',
-    'comment' => '母公司ID,0表示咩有关联母公司',
-    // 'form' => [
-    //     'edit' => 'enable',
-    //     'control' => 'select',
-    //     'data' => 'map',
-    //     'param' => []
-    // ]
+    'lang' => '机会所有人',
+    'comment' => '机会所有人',
+    'form' => [
+        // 'edit' => 'enable',
+        'control' => 'select',
+        'data' => 'relation',
+        'param' => [
+            'class' => 'backend\\\\models\\\\Salesman',
+            'fields' => [
+                0 => 'id',
+                1 => 'name'
+            ]
+        ]
+    ]
 ];
-echo json_encode($comment, JSON_UNESCAPED_UNICODE, 3) . PHP_EOL;
+// echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
+
+// $str1 = '@abc';
+// $str2 = '@234';
+// // compare by ascii code
+// var_dump(strncmp($str1, $str2, 1));
+
+// $v = version_compare(PHP_VERSION, '7.0.0', '>=');
+// var_dump($v);
+// echo PHP_VERSION . PHP_EOL;
