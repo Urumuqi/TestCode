@@ -354,7 +354,7 @@ $comment = [
         ]
     ]
 ];
-// echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
+echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
 
 // $str1 = '@abc';
 // $str2 = '@234';
@@ -364,3 +364,7 @@ $comment = [
 // $v = version_compare(PHP_VERSION, '7.0.0', '>=');
 // var_dump($v);
 // echo PHP_VERSION . PHP_EOL;
+
+// $timestamp = date('U');
+// $datetime = date('Y-m-d H:i:s');
+// echo 'timestamp = ' . $timestamp . ' | datetime = ' . $datetime . PHP_EOL;
