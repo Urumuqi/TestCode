@@ -1,0 +1,20 @@
+{
+    "name": "composer private",
+    "homepage": "http://packagist.dev.com",
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/test-lin/db.git" },
+        { "type": "vcs", "url": "https://github.com/test-lin/queue.git" },
+        { "type": "vcs", "url": "https://github.com/test-lin/cache.git" }
+    ],
+    "require": {
+        "test-lin/db": "*",
+        "test-lin/queue": "*",
+        "test-lin/cache": "*",
+        "php/xjwSpider": "*"
+    },
+    "archive": {
+        "directory": "dist",
+        "format": "tar",
+        "prefix-url": "http://packagist.dev.com"
+    }
+}

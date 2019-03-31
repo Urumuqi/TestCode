@@ -23,6 +23,25 @@ class Date
         }
         return $dayOfLastMonth;
     }
+
+    /**
+     * 获取描述对应的时分秒.
+     *
+     * @param integer $times
+     *
+     * @return string
+     */
+    public static function secToTime($times)
+    {
+        $result = '00:00:00';
+        if ($times>0) {
+                $hour = floor($times/3600);
+                $minute = floor(($times-3600 * $hour)/60);
+                $second = floor((($times-3600 * $hour) - 60 * $minute) % 60);
+                $result = $hour.':'.$minute.':'.$second;
+        }
+        return $result;
+    }
 }
 
-echo Date::getLastDayOfLastMonth(20180110) . PHP_EOL;
+echo Date::secToTime(86400) . PHP_EOL;
