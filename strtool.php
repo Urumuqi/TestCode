@@ -133,7 +133,112 @@
 //     $endTime = strtotime($step, $startTime);
 //     echo date('Y-m-d H:i:s', $startTime) . '_' . date('Y-m-d H:i:s', $endTime) . PHP_EOL;
 //     $startTime = $endTime;
+// // }
+// echo strtotime('2018-09-01') .  PHP_EOL;
+// echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
+
+// // 登陆密码
+// $passwd = md5('admin' . 'admin');
+// // 提现密码
+// $withdraw = md5('admin' . 'admin');
+// echo $passwd . PHP_EOL;
+
+// // 测试商户号
+// $merchantNo = 'S20170907011890';
+
+// test call_user_func
+// error_reporting(E_ALL);
+// function increment(&$n)
+// {
+//     return $n ++;
 // }
+
+// function incrementa($n)
+// {
+//     return $n ++;
+// }
+
+// $a = 0;
+// // call_user_func 不能用引用做参数
+// $aa = call_user_func('increment', $a);
+// echo '$a = ' . $a . ' $aa = ' . $aa . PHP_EOL;
+
+// $a = 0;
+// $aa = call_user_func('incrementa', $a);
+// echo '$a = ' . $a . ' $aa = ' . $aa . PHP_EOL;
+
+// $a = 1;
+// // call_user_func_array 可以传递引用做参数
+// call_user_func_array('increment', array(&$a));
+// echo $a . PHP_EOL;
+
+// $mac = 'f0:18:98:a2:2d:de';
+// $mac = str_replace(':', '', $mac);
+// $mac = strtoupper($mac);
+// echo $mac . PHP_EOL;
+// exit;
+
+// /**
+//  * 启动相机。
+//  */
+// $start = [
+//     'action_id' => '拍摄号',
+//     'camera_group_id' => '相机群',
+// ];
+
+// /**
+//  * 启动相机返回接口
+//  */
+// $startReturn = [
+//     'status' => 1, // 1成功，2繁忙，3失败（异常信息msg字段）
+//     'msg'    => 'camera init success',
+//     'action_id' => '拍摄号', // 拍摄号
+// ];
+
+// /**
+//  * 相机拍摄结果 camera_progress
+//  */
+// $cameraProgress = [
+//     'action_id' => '拍摄号',
+//     'camera_group_id' => '相机群',
+// ];
+
+// /**
+//  * 拍摄结果返回
+//  */
+// $cameraProgressRs = [
+//     'status' => 1, // 1拍摄完成，2拍摄中，3失败（异常信息msg字段)
+//     'msg'    => 'camera init success',
+//     'action_id' => '拍摄号', // 拍摄号
+//     'step' => '1', // 整数，1-10
+//     'desc' => 'step 描述',
+// ];
+// echo json_encode($cameraProgressRs, JSON_UNESCAPED_UNICODE) . PHP_EOL;
+// // 1. 关闭所有USB接口
+// // 2. 对焦5秒
+// // 3. 按下快门
+// // 4. 松开快门和对焦
+// // 5. 打开所有USB接口（每4个一组，每组间隔1秒）
+// // 6. 从相机读取20张照片
+// // 7. 将照片用OpenGL在大屏幕上渲染出来
+// // 8. FFMPEG合成视频
+// // 9. 上传视频（调用PHP对应接口）
+// // 10. 拍摄完成 （视频生成并上传完成）
+
+// echo json_encode($camResult, JSON_UNESCAPED_UNICODE) . PHP_EOL;
+
+// $ta = [
+//     'a' => 'a_t',
+//     'b' => 'b_t'
+// ];
+
+// $uri = 'http://dev.mxj-moment.com';
+// echo $uri .= '?'. http_build_query($ta) . PHP_EOL;
+
+// for ($i = 'a'; $i < 'z'; $i ++) {
+//     echo $i . '-';
+// }
+<<<<<<< HEAD
 // echo strtotime('2018-09-01') .  PHP_EOL;
 // echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
 
@@ -223,3 +328,66 @@ var_dump($t);
 // var_dump($offlineRefundInfo);
 // T052DS11RW
 // T125DS12ZA
+=======
+
+// test array_merge
+// $a1 = [
+//     0 => 'first',
+//     'name' => 'foo',
+//     'foo' => 'bar1',
+// ];
+// $a2 = [
+//     0 => 'bar',
+//     'foo' => 'bar',
+// ];
+// $a3 = array_merge($a1, $a2);
+// print_r($a3);
+// $a4 = $a2 + $a1;
+// print_r($a4);
+// Error querying database.  Cause: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+// The last packet successfully received from the server was 37,949 milliseconds ago.
+// The last packet sent successfully to the server was 37,992 milliseconds ago.
+
+// echo (int) ((0.1 + 0.7) * 10) . PHP_EOL;
+// echo serialize(0.1 + 0.7) . PHP_EOL;
+// echo serialize(3) . PHP_EOL;
+
+// $a = 9223372036854775807;
+// $b = 9223372036854775808;
+// var_dump($a, $b);
+
+// echo "\u{0000aa}";
+
+// $a = 'new string';
+// $b = 1;
+// xdebug_debug_zval('a');
+// xdebug_debug_zval('b');
+
+// $a = [
+//     'meaning' => 'life',
+//     'number' => 42
+// ];
+// xdebug_debug_zval('a');
+
+// 这里引用计数会 -1 ，但是不在有任何变量指向这个容器，将导致内存泄漏。
+// $a = ['one'];
+// $a[] = &$a;
+// xdebug_debug_zval('a');
+// unset($a);
+// xdebug_debug_zval('a');
+
+class Foo {
+
+    public $var = '3.1415962654';
+}
+// $baseMemory = memory_get_usage();
+for ($i = 0; $i <= 1000000; $i ++) {
+    $a = new Foo();
+    $a->self = $a;
+    // if ($i % 500 === 0) {
+    //     echo sprintf('%8d : ', $i), memory_get_usage() - $baseMemory, PHP_EOL;
+    // }
+}
+echo memory_get_peak_usage() , PHP_EOL;
+
+>>>>>>> 6db3d8b3075a4d8556b02842febec3789ab2f5f1

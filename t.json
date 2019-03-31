@@ -1,0 +1,23 @@
+{
+    "localaddr": ":8388", //本地使用的端口
+    "remoteaddr": "server_ip:29900", //服务器的kcptun服务的ip地址加端口
+    "key": "passwd", //你设定的加密密码
+    "crypt": "none", //加密方式
+    "mode": "fast2", //加速模式
+    "conn": 1, //从这以下的参数，你需要根据你在服务器端的配置参数进行设置
+    "autoexpire": 60,
+    "mtu": 1350,
+    "sndwnd": 1024,
+    "rcvwnd": 1024,
+    "datashard": 10,
+    "parityshard": 3,
+    "dscp": 0,
+    "nocomp": false,
+    "acknodelay": false,
+    "nodelay": 0,
+    "interval": 20,
+    "resend": 2,
+    "nc": 1,
+    "sockbuf": 4194304,
+    "keepalive": 10
+}
