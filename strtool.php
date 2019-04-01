@@ -238,6 +238,97 @@
 // for ($i = 'a'; $i < 'z'; $i ++) {
 //     echo $i . '-';
 // }
+<<<<<<< HEAD
+// echo strtotime('2018-09-01') .  PHP_EOL;
+// echo date('Y-m-d H:i:s', 1534902586) . PHP_EOL;
+
+// $images = [
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner4.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner3.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner2.png'
+// ];
+// $json = json_encode($images);
+// echo $json . PHP_EOL;
+
+// $ss = array(
+//     0, 2, 3, 10, 100
+// );
+// $t = max($ss);
+// var_dump($t);$images = [
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner4.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner3.png',
+//     'http://zss-mmj.oss-cn-shenzhen.aliyuncs.com/activity_images/banner2.png'
+// ];
+// $json = json_encode($images);
+// echo $json . PHP_EOL;
+// $uid = 1000016;
+// $o = $uid % 512;
+// echo $o . PHP_EOL;
+
+// $t = array(
+//     'code1' => 'name1',
+//     'code2' => 'name2',
+//     'code3' => 'name3'
+// );
+// $r = array_map(function ($k, $v) {
+//     return array(
+//         'code' => $k,
+//         'name' => $v,
+//     );
+// }, $t);
+// var_dump($r);
+
+// 应收明细订单明细
+// 售卖充电宝
+
+// $str = '2018091323233200070000000001';
+// echo strlen($str) . PHP_EOL;
+// $tarray = array(
+//     'period' => 10,
+//     'frequency' => 5,
+//     'block' => true,
+// );
+// $tstr = json_encode($tarray);
+
+// $tr = (array) json_decode($tstr, true);
+// var_dump($tr);
+
+// $p = array(
+//     'username' => 'admin1@ankerbox.com',
+//     'password' => 'Test123456',
+// );
+// echo json_encode($p) . PHP_EOL;
+
+// $t = localeconv();
+// var_dump($t);
+// $t = array(
+//     'key_1' => 'value_1',
+// );
+// $rs = array(
+//     'key_2' => 'value_2'
+// );
+// $rs = array_merge($rs, $t);
+// var_dump($rs);
+
+// $str = 'abwef0';
+// $str = substr($str, -4);
+// $str = ltrim($str, '0');
+// var_dump($str);
+$t = array(
+    'id' => 1,
+    'name' => 2,
+    'happy' => 'yes'
+);
+unset($t['id'], $t['name']);
+var_dump($t);
+
+// $refundInfoStr = '{"fail_day_times":0,"fail_times":0,"error_message":"","refund_no":"10001","provider":"offline_refund","applet":"wxapp","offline_refund_info":{"expired_order":{"209362961625":{"balance":0,"deposit":5800}},"online_failed_order":[],"refund_order":[],"refund_form":{"account":"13670009350","type":"2","name":"\u6c5f\u4f73\u6d9b","device_info":{"errMsg":"getSystemInfo:ok","batteryLevel":100,"version":"6.7.3","system":"iOS 11.4","windowHeight":603,"pixelRatio":2,"screenHeight":667,"language":"zh_CN","statusBarHeight":20,"deviceOrientation":"portrait","windowWidth":375,"model":"iPhone 6","screenWidth":375,"fontSizeSetting":16,"brand":"iPhone","platform":"ios","SDKVersion":"2.3.2"},"uid":"1887609","refund_applet":"wxapp"},"refund_amount":{"balance":0,"deposit":5800}}}';
+// $productInfo = json_decode($refundInfoStr, true);
+// $offlineRefundInfo = $productInfo['offline_refund_info'];
+// var_dump($offlineRefundInfo);
+// T052DS11RW
+// T125DS12ZA
+=======
 
 // test array_merge
 // $a1 = [
