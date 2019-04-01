@@ -1,2 +1,0 @@
-php Start.php --class="Export\Receivable" --from="2018-07-01" --to="2018-07-06" --file=/tmp/finance_export/receivable_detail.20170926_1-5.csv --mod=c_1
-
