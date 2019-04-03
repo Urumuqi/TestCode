@@ -33,3 +33,4 @@ $anomy->setLogger(new class implements Logger {
         echo $msg;
     }
 });
+var_dump($anomy->getLogger());

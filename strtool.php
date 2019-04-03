@@ -404,22 +404,22 @@ var_dump($t);
 // 已入驻
 // {"1":"建设中","2":"土建竣工","3":"公共装修","4":"商业装修","5":"预招租","6":"招租","7":"正式入驻运营"}
 $comment = [
-    'format' => [
-        'method' => 'map',
+    // 'format' => [
+    //     'method' => 'map',
         // 'param' => [
         //     'format' => 'yyyy-mm-dd'
         // ],
     // ],
-        'content' => [
-            '3' => '否',
-            '1' => '是',
-        ],
-    ],
-    'lang' => '立即上架',
-    'comment' => '立即上架',
-    'form' => [
+    //     'content' => [
+    //         '3' => '否',
+    //         '1' => '是',
+    //     ],
+    // ],
+    'lang' => '消息内容',
+    'comment' => '消息内容',
+    // 'form' => [
         // 'edit' => 'enable',
-        'control' => 'radio_button',
+        // 'control' => 'radio_button',
         // 'data' => 'relation',
         // 'param' => [
         //         'class' => 'backend\\\\models\\\\Salesman',
@@ -428,8 +428,8 @@ $comment = [
         //             1 => 'name'
         //         ]
         //     ],
-        'data' => 'map'
-    ]
+        // 'data' => 'map'
+    // ]
 ];
 echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
 

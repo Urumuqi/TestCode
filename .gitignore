@@ -1,9 +1,5 @@
 # master
-<<<<<<< HEAD
 .vscode/
-=======
-.vscode/
-
 /vendor/
->>>>>>> 6db3d8b3075a4d8556b02842febec3789ab2f5f1
 tempCodeRunnerFile.php
+vendor/*
