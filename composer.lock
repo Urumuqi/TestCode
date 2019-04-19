@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86c9f984d1f219615c37171944ca717f",
+    "content-hash": "f0ad1843017961a2d66a7a6edfec29c7",
     "packages": [
+        {
+            "name": "pda/pheanstalk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pheanstalk/pheanstalk.git",
+                "reference": "c25e4b463758ea8dc2eef0560d29dbc7c4200d94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pheanstalk/pheanstalk/zipball/c25e4b463758ea8dc2eef0560d29dbc7c4200d94",
+                "reference": "c25e4b463758ea8dc2eef0560d29dbc7c4200d94",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "^2",
+                "phpunit/phpunit": "^7",
+                "vimeo/psalm": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pheanstalk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Annesley",
+                    "email": "paul@annesley.cc",
+                    "homepage": "http://paul.annesley.cc/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sam Mousa",
+                    "email": "sam@mousa.nl",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "PHP client for beanstalkd queue",
+            "homepage": "https://github.com/pda/pheanstalk",
+            "keywords": [
+                "beanstalkd"
+            ],
+            "time": "2019-03-08T10:06:02+00:00"
+        },
         {
             "name": "php-amqplib/php-amqplib",
             "version": "v2.9.1",
@@ -84,7 +137,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pda/pheanstalk": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

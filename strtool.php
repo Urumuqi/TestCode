@@ -431,7 +431,7 @@ $comment = [
         // 'data' => 'map'
     // ]
 ];
-echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
+// echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
 
 // $str1 = '@abc';
 // $str2 = '@234';
@@ -446,4 +446,70 @@ echo json_encode($comment, JSON_UNESCAPED_UNICODE, 4) . PHP_EOL;
 // $datetime = date('Y-m-d H:i:s');
 // echo 'timestamp = ' . $timestamp . ' | datetime = ' . $datetime . PHP_EOL;
 
-echo date('Y-m-d H:i:s', 1554048000) . PHP_EOL;
+// echo date('Y-m-d H:i:s', 1554048000) . PHP_EOL;
+
+$a = [
+    'adfad',
+];
+
+// $str = 'SELECT i.operator_code, c.customer_name, p.product_name
+// FROM sfo_implementation i
+// JOIN sfo_customers c ON c.id = i.customer_id
+// JOIN sfo_product p ON p.id = i.deploy_version
+// WHERE i.operator_code IN (\''. implode($a, "','") .'\')';
+// echo $str . PHP_EOL;
+
+// $preg = "/^[1][3,4,5,6,7,8,9][0-9]{9}$/";
+// $num = '19980453711';
+// $pr = preg_match($preg, $num, $nums);
+// var_dump($pr, $nums);
+
+$t = '1. 踢出用户登陆
+2. 网站修改为正在维护状态
+3. 保持维护状态5分钟
+4. 关闭网站
+12. 部署新代码
+5. 检查升级之前db状态
+6. 创建升级周后新db
+7. 导出老db数据
+8. 导入老db数据到新db
+9. 对比新老db数据表数据总和
+10. 切换运营商db到新db
+11. 跑migrate
+13. 跑关键接口是否正常访问 （若异常helm rollback db切换回老db）
+14. 回写自动升级状态
+15. 打开网站访问
+16. 通知操作人（短信）
+17. 人工确认
+18. 开放给客户确认使用';
+
+// $tarr = explode("\n", $t);
+// // var_dump($tarr);
+// $tarr_1 = array_map(function ($it) {
+//     $it = explode(" ", $it);
+//     return $it[1];
+// }, $tarr);
+// print_r($tarr_1);
+$arr = [
+    't' => null,
+];
+
+// $m = $arr['t'] ?? 'default';
+// echo $m, PHP_EOL;
+// 操作类型
+const TYPE_UPGRADE = 1;
+const TYPE_DEPLOY = 2;
+
+// 状态
+const STATUS_NEW = 0;
+const STATUS_DOING = 1;
+const STATUS_FAILED = 2;
+const STATUS_SUCCESS = 3;
+
+// 操作状态
+const STATUS_INIT = 0;
+const STATUS_SUCCESS = 1;
+const STATUS_FAILED = 2;
+
+$t = 0 ? true : false;
+var_dump($t);
