@@ -308,7 +308,7 @@ $t = array(
     'happy' => 'yes'
 );
 unset($t['id'], $t['name']);
-var_dump($t);
+// var_dump($t);
 
 // $refundInfoStr = '{"fail_day_times":0,"fail_times":0,"error_message":"","refund_no":"10001","provider":"offline_refund","applet":"wxapp","offline_refund_info":{"expired_order":{"209362961625":{"balance":0,"deposit":5800}},"online_failed_order":[],"refund_order":[],"refund_form":{"account":"13670009350","type":"2","name":"\u6c5f\u4f73\u6d9b","device_info":{"errMsg":"getSystemInfo:ok","batteryLevel":100,"version":"6.7.3","system":"iOS 11.4","windowHeight":603,"pixelRatio":2,"screenHeight":667,"language":"zh_CN","statusBarHeight":20,"deviceOrientation":"portrait","windowWidth":375,"model":"iPhone 6","screenWidth":375,"fontSizeSetting":16,"brand":"iPhone","platform":"ios","SDKVersion":"2.3.2"},"uid":"1887609","refund_applet":"wxapp"},"refund_amount":{"balance":0,"deposit":5800}}}';
 // $productInfo = json_decode($refundInfoStr, true);
@@ -448,10 +448,6 @@ $comment = [
 
 // echo date('Y-m-d H:i:s', 1554048000) . PHP_EOL;
 
-$a = [
-    'adfad',
-];
-
 // $str = 'SELECT i.operator_code, c.customer_name, p.product_name
 // FROM sfo_implementation i
 // JOIN sfo_customers c ON c.id = i.customer_id
@@ -490,26 +486,11 @@ $t = '1. 踢出用户登陆
 //     return $it[1];
 // }, $tarr);
 // print_r($tarr_1);
-$arr = [
-    't' => null,
-];
 
 // $m = $arr['t'] ?? 'default';
 // echo $m, PHP_EOL;
-// 操作类型
-const TYPE_UPGRADE = 1;
-const TYPE_DEPLOY = 2;
 
-// 状态
-const STATUS_NEW = 0;
-const STATUS_DOING = 1;
-const STATUS_FAILED = 2;
-const STATUS_SUCCESS = 3;
-
-// 操作状态
-const STATUS_INIT = 0;
-const STATUS_SUCCESS = 1;
-const STATUS_FAILED = 2;
-
-$t = 0 ? true : false;
-var_dump($t);
+// $t = 0 ? true : false;
+// var_dump($t);
+$t = rand(0, 2);
+echo $t, PHP_EOL;
