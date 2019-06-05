@@ -58,10 +58,12 @@ class HttpClient
 
 // test
 $cli = new HttpClient('http://154.85.15.18:9527');
+echo date('Y-m-d H:i'), PHP_EOL;
 $response = $cli->post('', [
     'form_params' => [
         'birthday' => date('Y-m-d H:i'),
-        'sex' => 'male'
+        'sex' => 'male',
+        'calc_date' => date('Y-m-d H:i'),
     ]
 ]);
 
