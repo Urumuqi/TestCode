@@ -9,9 +9,10 @@
             "email": "yuri1308960477@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php-amqplib/php-amqplib": "^2.9",
-        "pda/pheanstalk": "dev-master"
+        "pda/pheanstalk": "dev-master",
+        "guzzlehttp/guzzle": "^6.3",
+        "darkghosthunter/passless": "^2.0"
     }
 }

@@ -363,46 +363,7 @@ unset($t['id'], $t['name']);
 // unset($a);
 // xdebug_debug_zval('a');
 
-// class Foo {
 
-//     public $var = '3.1415962654';
-// }
-// // $baseMemory = memory_get_usage();
-// for ($i = 0; $i <= 1000000; $i ++) {
-//     $a = new Foo();
-//     $a->self = $a;
-//     // if ($i % 500 === 0) {
-//     //     echo sprintf('%8d : ', $i), memory_get_usage() - $baseMemory, PHP_EOL;
-//     // }
-// }
-// echo memory_get_peak_usage() , PHP_EOL;
-// $res = [
-//     'heart' => [
-//         'score' => 95,
-//         'desc' => '心脏非常健康',
-//         'notice' => '心态很好，继续保持'
-//     ],
-//     'stomach' => [
-//         'score' => 40,
-//         'desc' => '风险极大',
-//         'notice' => '早起早睡，不熬夜，一天三顿按时吃'
-//     ],
-// ];
-// echo json_encode($res, true) . PHP_EOL;
-
-// $project_stage = [
-//     1 => '建设中',
-//     2 => '土建竣工',
-//     3 => '公共装修',
-//     4 => '商业装修',
-//     5 => '预招租',
-//     6 => '招租',
-//     7 => '正式入驻运营',
-// ];
-// echo json_encode($project_stage, JSON_UNESCAPED_UNICODE) . PHP_EOL;
-
-// 已入驻
-// {"1":"建设中","2":"土建竣工","3":"公共装修","4":"商业装修","5":"预招租","6":"招租","7":"正式入驻运营"}
 $comment = [
     // 'format' => [
     //     'method' => 'map',
@@ -438,59 +399,38 @@ $comment = [
 // // compare by ascii code
 // var_dump(strncmp($str1, $str2, 1));
 
-// $v = version_compare(PHP_VERSION, '7.0.0', '>=');
-// var_dump($v);
-// echo PHP_VERSION . PHP_EOL;
-
-// $timestamp = date('U');
-// $datetime = date('Y-m-d H:i:s');
-// echo 'timestamp = ' . $timestamp . ' | datetime = ' . $datetime . PHP_EOL;
-
-// echo date('Y-m-d H:i:s', 1554048000) . PHP_EOL;
-
-// $str = 'SELECT i.operator_code, c.customer_name, p.product_name
-// FROM sfo_implementation i
-// JOIN sfo_customers c ON c.id = i.customer_id
-// JOIN sfo_product p ON p.id = i.deploy_version
-// WHERE i.operator_code IN (\''. implode($a, "','") .'\')';
-// echo $str . PHP_EOL;
-
 // $preg = "/^[1][3,4,5,6,7,8,9][0-9]{9}$/";
 // $num = '19980453711';
 // $pr = preg_match($preg, $num, $nums);
 // var_dump($pr, $nums);
+// 中文金额转数字
+// $t = '捌仟陆佰叁拾柒元柒角贰分';
+// $zh_num = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+// $zh_unit = ['分', '角', '元', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿', '拾', '佰', '仟'];
+// $t = str_replace(array_values($zh_num), array_keys($zh_num), $t);
+// $splitPattern= '/[^元圆]*角/';
+// $splited = preg_match($splitPattern, $t);
+// print_r($splited);
+// $t = [
+//     // 'operation' => 'query',
+//     // 'object' => 'order'
+//     'jobId' => '09cd99a728c5a13906e523c9d0db254ccf2e063f01104dcba9c9d67b5add9d2a',
+//     // 'datas' => [
+//     //     0 => ['q' => 'select id from order limit 0, 10'],
+//     // ],
+//     'batchId' => '5af42fe8e0b66147c13efcc01700f8fa6618ebdf66194f818d33379e53e1e9e9',
+// ];
+// $t = [
+//     'name' => '酷炫的回顾名称',
+//     'detail' => '这是酷炫的回顾内容',
+//     'activity_id' => 148,
+// ];
+// echo json_encode($t), PHP_EOL;
 
-$t = '1. 踢出用户登陆
-2. 网站修改为正在维护状态
-3. 保持维护状态5分钟
-4. 关闭网站
-12. 部署新代码
-5. 检查升级之前db状态
-6. 创建升级周后新db
-7. 导出老db数据
-8. 导入老db数据到新db
-9. 对比新老db数据表数据总和
-10. 切换运营商db到新db
-11. 跑migrate
-13. 跑关键接口是否正常访问 （若异常helm rollback db切换回老db）
-14. 回写自动升级状态
-15. 打开网站访问
-16. 通知操作人（短信）
-17. 人工确认
-18. 开放给客户确认使用';
+// $s3 = microtime(true);
+// $timestamp = (float) ($s3 * 1000);
+// var_dump($s3, sprintf('%.0f', $timestamp));
+// $time = strtotime('-20 days', time());
+// echo $time . '000', PHP_EOL;
 
-// $tarr = explode("\n", $t);
-// // var_dump($tarr);
-// $tarr_1 = array_map(function ($it) {
-//     $it = explode(" ", $it);
-//     return $it[1];
-// }, $tarr);
-// print_r($tarr_1);
-
-// $m = $arr['t'] ?? 'default';
-// echo $m, PHP_EOL;
-
-// $t = 0 ? true : false;
-// var_dump($t);
-$t = rand(0, 2);
-echo $t, PHP_EOL;
+echo date('Y-m-d 00:00'), PHP_EOL;

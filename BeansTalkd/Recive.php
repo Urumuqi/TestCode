@@ -9,7 +9,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Pheanstalk\Pheanstalk;
 
-$host = '47.110.90.211';
+$host = '';
 $port = '11300';
 
 // $pheanstalk = Pheanstalk::create($host, $port, 20);
@@ -29,7 +29,7 @@ $port = '11300';
 // }
 
 $queue = Pheanstalk::create($host, $port, 5);
-$queue->watch('sa_internal');
+$queue->watch('seafwehp33');
 while ($job = $queue->reserve()) {
     $recv = json_decode($job->getData(), true);
     print_r($recv);

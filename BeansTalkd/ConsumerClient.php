@@ -52,7 +52,7 @@ class ConsumerClient
     public function __construct($host, $port = '11300', $timeout = 20)
     {
         try {
-            $this->pheastalkd = Pheanstalk::create($host, $port, $timeout);
+            $this->pheanstalkd = Pheanstalk::create($host, $port, $timeout);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -68,18 +68,27 @@ class ConsumerClient
         $this->pheanstalkd->watch($tubeName);
         while ($job = $this->pheanstalkd->reserve()) {
             // parse job data
-            $recv = json_decode($job->getData(), true);
-            $dealStat = 0; // $recv data process state. 0 failed | 1 success | 2 retry
-            $dealStat = $this->routeCallback($recv);
+            try {
+                $recv = json_decode($job->getData(), true);
+                print_r($recv);
+                $dealStat = 0; // $recv data process state. 0 failed | 1 success | 2 retry
+                $dealStat = $this->routeCallback($recv);
+            } catch (\Exception $e) {
+                // TODO deal with exception
+                $dealStat = 0;
+            }
             switch ($dealStat) {
                 case self::FAILED:
-                    $this->pheanstalkd->release($job);
+                    // 处理失败
+                    $this->pheanstalkd->bury($job);
                     break;
                 case self::SUCCESS:
+                    // 处理成功
                     $this->pheanstalkd->delete($job);
                     break;
                 case self::RETRY:
-                    $this->pheanstalkd->bury($job);
+                    // 重新进入队列重试
+                    $this->pheanstalkd->release($job);
                     break;
                 default:
                     break;
@@ -99,6 +108,21 @@ class ConsumerClient
     public function routeCallback(array $recv)
     {
         print_r($recv);
-        return rand(0, 2);
+        $businessType = $recv['business_type'];
+        $action = $recv['action'];
+        // TODO 根据businessType 和 action 处理不同的业务.
+        return 1; // rand(0, 2);
     }
 }
+
+// test
+$client = new ConsumerClient('');
+$client->process('rzptwnrn59');
+$p = [
+    'business_type' => 'message',
+    'action' => 'create',
+    'params' => [
+        'msg_key' => 3
+    ],
+    'service_list' => [],
+];
