@@ -57,15 +57,14 @@ class HttpClient
 }
 
 // test
-$cli = new HttpClient('http://154.85.15.18:9527');
-echo date('Y-m-d H:i'), PHP_EOL;
-$response = $cli->post('', [
-    'form_params' => [
-        'birthday' => date('Y-m-d H:i'),
-        'sex' => 'male',
-        'calc_date' => date('Y-m-d H:i'),
-    ]
-]);
+// $cli = new HttpClient('https://oapi.dingtalk.com/gettoken?appKey=dingc629e2f4a2f36706&appsecret=ding5ttibxnsv1fxkfgy');
+$url = 'https://oapi.dingtalk.com/gettoken?appkey=ding5ttibxnsv1fxkfgy&appsecret=eIR9a-wdDCIYMvHOHXKr_3MZyNuIF63-a8mS58FNuYVYeIsn7Uj1T-4Kgz8rhRrw';
+$cli = new HttpClient($url);
+// $client = new Client();
+// $resp = $client->request('GET', $url);
+// echo $resp->getBody(), PHP_EOL;
+// echo date('Y-m-d H:i'), PHP_EOL;
+$response = $cli->get('');
 
 // $respBody = $response->getBody();
 // var_dump($response->getBody());
