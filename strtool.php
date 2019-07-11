@@ -87,14 +87,8 @@ $t = [
         ],
     ]
 ];
-echo json_encode($t, JSON_UNESCAPED_UNICODE), PHP_EOL;
 
-// echo json_encode($p, JSON_UNESCAPED_UNICODE), PHP_EOL;
-
-// echo json_encode(['code' => '1234'], JSON_UNESCAPED_UNICODE), PHP_EOL;
-
-// gen random numbers
-// for ($i = 0; $i < 10000; $i++) {
-//     $rand = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
-//     echo $rand, PHP_EOL;
-// }
+// strpos
+$t = 'app';
+$t1 = strpos('app.operator_code', $t);
+var_dump($t1);
