@@ -87,8 +87,3 @@ $t = [
         ],
     ]
 ];
-
-// strpos
-$t = 'app';
-$t1 = strpos('app.operator_code', $t);
-var_dump($t1);
