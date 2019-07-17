@@ -48,7 +48,7 @@ class Rsa
     public function publicEncrypt()
     {
         openssl_public_encrypt(json_encode($this->payload), $encrypted, $this->publicKey);
-        return $encrypted;
+        return base64_encode($encrypted);
     }
 
     /**
@@ -60,7 +60,7 @@ class Rsa
      */
     public function privateDecrypt($encryptedStr)
     {
-        openssl_private_decrypt($encryptedStr, $decrypted, $this->privateKey);
+        openssl_private_decrypt(base64_decode($encryptedStr), $decrypted, $this->privateKey);
         return $decrypted;
     }
 
