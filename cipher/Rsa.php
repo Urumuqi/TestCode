@@ -63,6 +63,30 @@ class Rsa
         openssl_private_decrypt($encryptedStr, $decrypted, $this->privateKey);
         return $decrypted;
     }
+
+    /**
+     * private key encrypt.
+     *
+     * @return string
+     */
+    public function privateEncrypt()
+    {
+        openssl_private_encrypt(json_encode($this->payload), $encrypted, $this->privateKey);
+        return base64_encode($encrypted);
+    }
+
+    /**
+     * public key decrypt.
+     *
+     * @param string $encrypted
+     *
+     * @return string
+     */
+    public function publicDecrypt($encrypted)
+    {
+        openssl_public_decrypt(base64_decode($encrypted), $decrypted, $this->publicKey);
+        return $decrypted;
+    }
 }
 
 // test
@@ -81,3 +105,7 @@ $encrypted = $rsa->setPayload($payload)
 echo 'public encrypted : ', $encrypted, PHP_EOL;
 $decrypted = $rsa->privateDecrypt($encrypted);
 echo 'private decrypted : ', $decrypted, PHP_EOL;
+$privEncrypted = $rsa->privateEncrypt();
+echo 'private encrypted : ', $privEncrypted, PHP_EOL;
+$pubDecrypted = $rsa->publicDecrypt($privEncrypted);
+echo 'public decrypted : ', $pubDecrypted, PHP_EOL;
