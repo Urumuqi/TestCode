@@ -52,38 +52,59 @@ $backendConfigs = [
 // $tmp = array_merge($backendConfigs, $commonConfigs);
 // var_dump($tmp);
 
-$p = [
-    'type' => 'hobby',
-    'tags' => [
-        0 => [
-            'name' => '思考',
-            'is_enabled' => 0
-        ],
-    ],
-];
+// $p = [
+//     'type' => 'hobby',
+//     'tags' => [
+//         0 => [
+//             'name' => '思考',
+//             'is_enabled' => 0
+//         ],
+//     ],
+// ];
 
-$t = [
+// $t = [
     // 'encrypted_data' => "9BPK/2U/MH65qjgVhHi1FpxYtZN1Qm/EOZIvRCFNg0gIUySO2WRPEmT01POo3L1qDX7gQO66/wjiXmCrvYfgyVKeEYsP2iMEAHTAt/mhSu9l3cko3a7Rc2NUtTf1CJJRag4C0X2NlDkK2CKO37gMHmQb6BrpJXG9zBlNlkWVMElc6c4RomV3TDu5xV+t3rGYY7nzwcp73iOI4/9adBbqXarW6TQZs4Xil0GfUxiE4//yVIzJL7QbwDjLTEX0T+HnvzNbSmfUKhX2b7WWJ2tqCCgMWwdK2R9uxB/fAfNdzY86aHx4oLIJMYZjQBMj2JtDTZB+zIhjFv5RqD5tftrve3NfMSox9BbKah8tk4GrX1v83LutbVgd5RbuyK4flLqUVDb132BZhz83ZqHKUm5dY/E4XXZ1unvjsL5qqTlE0rnkgBLNhcqqJiwR4ZYojXXc",
     // 'iv' => "Xy6vBoy2c7HsVsa7AeEmXg==",
     // 'session_key' => 'MY6KwGLyK/1TFy6TGH5gpw==',
     // '你期待那个ta能为你做什么？',
     // '你能为ta做什么？',
     // '你想和什么样的人谈恋爱？'
-    'qas' => [
-        [
-            "id" => 1,
-            "question" => "你期待那个ta能为你做什么？",
-            "answer" => ""
-        ],
-        [
-            "id" => 2,
-            "question" => "你能为ta做什么？",
-            "answer" => ""
-        ],
-        [
-            "id" => 3,
-            "question" => "你想和什么样的人谈恋爱？",
-            "answer" => ""
-        ],
+//     'qas' => [
+//         [
+//             "id" => 1,
+//             "question" => "你期待那个ta能为你做什么？",
+//             "answer" => ""
+//         ],
+//         [
+//             "id" => 2,
+//             "question" => "你能为ta做什么？",
+//             "answer" => ""
+//         ],
+//         [
+//             "id" => 3,
+//             "question" => "你想和什么样的人谈恋爱？",
+//             "answer" => ""
+//         ],
+//     ]
+// ];
+
+$array1 = [
+    0 => [
+        'key1' => 'value1',
+        'key2' => 'value2',
+        'key3' => 'value3',
+    ],
+    1 => [
+        'key11' => 'value11',
+        'key21' => 'value21',
+        'key31' => 'value31',
     ]
 ];
+
+$t = array_map(function ($item) {
+    return [
+        't' => $item,
+    ];
+}, $array1);
+var_dump($t);
+
