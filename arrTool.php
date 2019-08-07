@@ -197,7 +197,7 @@ $payload = [
     'building_count' => '1',
 ];
 
-// echo json_encode($payload), PHP_EOL;
+echo json_encode($payload), PHP_EOL;
 
 // echo json_encode($batteryBaseInfo) . PHP_EOL;
 
@@ -236,4 +236,4 @@ $p = ['members' =>  [
     ],
 ]];
 
-echo json_encode($p), PHP_EOL;
+// echo json_encode($p), PHP_EOL;
