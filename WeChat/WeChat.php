@@ -7,10 +7,10 @@ class WeChat
 {
 
     /** appid */
-    public $appId = 'wx61bd1e6ab1ee1bd7';
+    public $appId = '';
 
     /** appsecret */
-    public $appSecret = '1b11d3d2cc081975746c9b907db2799c';
+    public $appSecret = '';
 
     /** 测试微信号 */
     public $wechatId = 'gh_cde01974aaa0';
