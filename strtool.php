@@ -88,23 +88,40 @@ $backendConfigs = [
 //     ]
 // ];
 
-$array1 = [
-    0 => [
-        'key1' => 'value1',
-        'key2' => 'value2',
-        'key3' => 'value3',
-    ],
-    1 => [
-        'key11' => 'value11',
-        'key21' => 'value21',
-        'key31' => 'value31',
-    ]
-];
+// $template = [
+//     'type' => '通知',
+//     '模版名称' => 'SpacesForce',
+//     'template' => '您负责实施的${customer}的${product}的${env}已部署成功，请及时登陆系统完成测试后续工作。',
+// ];
 
-$t = array_map(function ($item) {
-    return [
-        't' => $item,
-    ];
-}, $array1);
-var_dump($t);
+// $t = '1';
+// try {
+//     // return here
+//     echo 'returned here', PHP_EOL;
+//     $t = 2;
+//     // throw new \Exception('manual exception');
+//     return true;
+// } catch (\Exception $e) {
+//     // throw $e;
+// } finally {
+//     $execep = isset($e) ? true : false;;
+//     echo 'in finally block', PHP_EOL;
+//     var_dump($execep);
+//     // $t = 3;
+//     // echo $t, PHP_EOL;
+// }
+
+// echo $t, PHP_EOL;
+
+// $p = [
+//     'template_params' => [
+//         'customer' => '正本联创资产管理（北京）有限公司',
+//         'product' => 'AMC Essentials资产管理云基础版',
+//         'env' => '试用系统',
+//     ],
+//     'template_code' => '',
+// ];
+// echo json_encode($p), PHP_EOL;
+
+
 
