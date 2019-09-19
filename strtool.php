@@ -5,11 +5,11 @@
  * @author wuqi <wuqi226@gmail.com>
  */
 
-function foo()
-{
-    echo 'call foo()', PHP_EOL;
-    return true;
-}
-
-$a = false and foo();
-var_dump($a);
+$p = [
+    0 => [
+        'question' => '你希望参加什么类型的活动？',
+        'placeholder' => '你想参加什么类型的活动',
+        'answer' => '',
+    ],
+];
+echo json_encode($p, JSON_UNESCAPED_UNICODE), PHP_EOL;
