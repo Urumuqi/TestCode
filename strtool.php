@@ -5,11 +5,13 @@
  * @author wuqi <wuqi226@gmail.com>
  */
 
-$p = [
-    0 => [
-        'question' => '你希望参加什么类型的活动？',
-        'placeholder' => '你想参加什么类型的活动',
-        'answer' => '',
-    ],
+$jsonArr = [
+    'marital_status' => 1,
+    'job' => '架构师',
+    'phone' => '18380447995',
+    'self_desc' => 'do what u do love',
+    'province' => '四川省',
+    'city' => '成都市',
+    'area' => '武侯区',
 ];
-echo json_encode($p, JSON_UNESCAPED_UNICODE), PHP_EOL;
+echo json_encode(['province', 'city', 'area', 'marital_status', 'job', 'phone', 'self_desc']), PHP_EOL;
