@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
                 File::append(
                     storage_path('app/logs/sql-'. date('Y-m-d') .'.log'),
                     sprintf('date: %s | execution time: %d | sql: %s ;', date('Y-m-d H:i:s'), $query->time, $sql) . PHP_EOL
-               );
+                );
             });
         }
     }
