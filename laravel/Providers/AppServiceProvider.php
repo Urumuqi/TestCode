@@ -2,12 +2,6 @@
 
 namespace App\Providers;
 
-use App\EloquentModel\SfoChannel;
-use App\EloquentModel\SfoBroker;
-use App\EloquentModel\SfoModel;
-use App\Observers\ChannelObserver;
-use App\Observers\BrokerObserver;
-use App\Observers\OperateRecord;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
