@@ -15,6 +15,13 @@ $jsonArr = [
     'area' => '武侯区',
 ];
 // echo json_encode(['province', 'city', 'area', 'marital_status', 'job', 'phone', 'self_desc']), PHP_EOL;
-array_walk($jsonArr, function ($item, $key) {
-    var_dump($item, $key);
-});
+// array_walk($jsonArr, function ($item, $key) {
+//     var_dump($item, $key);
+// });
+
+$t = 'aaaaa';
+$b = '2222';
+
+$t .= $b;
+
+echo $t, PHP_EOL;
