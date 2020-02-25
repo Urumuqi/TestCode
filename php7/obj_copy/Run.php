@@ -8,6 +8,7 @@
 class SubObject
 {
     static $instances = 0;
+    static $cloneCount = 0;
     public $instance;
 
     public function __construct()
@@ -17,7 +18,13 @@ class SubObject
 
     public function __clone()
     {
+        ++ static::$cloneCount;
         $this->instance = ++ self::$instances;
+    }
+
+    public function __destruct()
+    {
+        -- self::$cloneCount;
     }
 }
 
@@ -43,3 +50,12 @@ print_r($obj);
 echo "clone object" , PHP_EOL;
 $obj2 = clone $obj;
 print_r($obj2);
+
+$clone2 = clone $obj;
+$clone3 = clone $obj2;
+$clone4 = clone $obj;
+
+echo "copy count : " , SubObject::$cloneCount , PHP_EOL;
+
+unset($clone4, $clone3);
+echo "copy count : " , SubObject::$cloneCount , PHP_EOL;
