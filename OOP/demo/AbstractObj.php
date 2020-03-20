@@ -37,7 +37,7 @@ class Factory
 {
     public static function getValidator($type = 'type')
     {
-        $va;
+        $va = '';
         switch ($type) {
             case 'type':
                 $va = new DecrationValidator();
